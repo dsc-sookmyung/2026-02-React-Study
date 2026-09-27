@@ -1,0 +1,180 @@
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    font-family:
+    "Pretendard",
+    sans-serif;
+
+}
+
+
+/* 전체 배경 */
+.container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eaf7ff,
+        #d2effb
+    );
+
+}
+
+
+
+/* 프로필 카드 */
+.card{
+
+    width:460px;
+
+    min-height:580px;
+
+    background:#f4f8fa;
+
+    border-radius:32px;
+
+    padding:50px 45px;
+
+    text-align:center;
+
+    border:1px solid #ead8c7;
+
+    box-shadow:
+    0 25px 60px rgba(90,60,30,0.22);
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 25px 50px rgba(90,60,30,0.25);
+
+}
+
+
+
+/* 프로필 이미지 */
+.image-box img{
+
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 이름 */
+.content h1{
+
+    margin: 30px 0 15px;
+
+    font-size:36px;
+
+    color:#3e2c23;
+
+}
+
+
+/* 관심 분야 */
+.content h3 {
+    margin: 25px 0 15px;
+}
+
+
+
+/* 직무 */
+.role{
+
+    margin: 0 0 20px;
+
+    color:rgb(52, 38, 29);
+    
+    font-weight:bold;
+
+}
+
+
+
+/* 소개글 */
+.desc{
+
+    margin: 0 0 25px;
+
+    color:#534e4b;
+
+    line-height:1.6;
+
+}
+
+
+
+/* 관심 분야 영역 */
+.tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* 관심 분야 태그 */
+.tag{
+
+    padding:
+    8px 15px;
+
+    border-radius:20px;
+
+    background: #e3f2f9;
+
+    color: #5b8294;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+
+.tag:hover{
+
+    background: #9ed8f0;
+    color: white;
+}
