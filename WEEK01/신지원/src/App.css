@@ -84,6 +84,7 @@ body{
 
 }
 
+/* 프로필 이미지 중앙 정렬 */
 .image-box {
     display: flex;
     justify-content: center;
@@ -177,4 +178,17 @@ body{
 
     background: #9ed8f0;
     color: white;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.links img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }

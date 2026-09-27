@@ -18,6 +18,18 @@ function App() {
       "Frontend",
       "개발자",
       "웹 개발"
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/jiwonnee",
+        icon: "/github.svg"
+      },
+      {
+        name: "Instagram",
+        url: "https://www.instagram.com/03_jiwons/",
+        icon: "/instagram.svg"
+      }
     ]
   };
 

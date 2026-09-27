@@ -1,5 +1,6 @@
 import ProfileImage from "./ProfileImage";
 import InterestList from "./InterestList";
+import SocialLinks from "./SocialLinks";
 
 
 function ProfileCard({profile}) {
@@ -36,6 +37,27 @@ function ProfileCard({profile}) {
                     interests={profile.interests}
                 />
 
+                <h3>
+                    사이트
+                </h3>
+
+                <div className="links">
+                    {
+                        profile.links.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.url}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    src={link.icon}
+                                    alt={link.name}
+                                />
+                            </a>
+                        ))
+                    }
+                </div>
 
             </div>
 
