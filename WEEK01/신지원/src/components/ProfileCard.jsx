@@ -1,46 +1,48 @@
 import ProfileImage from "./ProfileImage";
 import InterestList from "./InterestList";
-import SocialLinks from "./SocialLinks";
 
-
-function ProfileCard({profile}) {
+function ProfileCard({ profile }) {
 
     return (
         <div className="card">
+            <p className="profile-label">
+                PROFILE / 01
+            </p>
 
-            <ProfileImage image={profile.image}/>
+            <div className="profile-header">
+                <ProfileImage image={profile.image} />
+                <div className="profile-info">
+                    <h1>
+                        {profile.name}
+                    </h1>
+                    <p className="role">
+                        {profile.role}
+                    </p>
+                </div>
+            </div>
 
-
-            <div className="content">
-
-                <h1>
-                    {profile.name}
-                </h1>
-
-
-                <p className="role">
-                    {profile.role}
-                </p>
-
-
+            <section className="about">
+                <h2>
+                    ABOUT
+                </h2>
                 <p className="desc">
                     {profile.description}
                 </p>
+            </section>
 
-
-                <h3>
-                    관심 분야
-                </h3>
-
-
-                <InterestList 
+            <section className="interests">
+                <h2>
+                    INTERESTS
+                </h2>
+                <InterestList
                     interests={profile.interests}
                 />
+            </section>
 
-                <h3>
-                    사이트
-                </h3>
-
+            <section className="links-section">
+                <h2>
+                    CONTACT
+                </h2>
                 <div className="links">
                     {
                         profile.links.map((link) => (
@@ -50,20 +52,20 @@ function ProfileCard({profile}) {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <img
-                                    src={link.icon}
-                                    alt={link.name}
-                                />
+                                <span>
+                                    {link.name}
+                                </span>
+
+                                <span>
+                                    ↗
+                                </span>
                             </a>
                         ))
                     }
                 </div>
-
-            </div>
-
+            </section>
         </div>
-    )
+    );
 }
-
 
 export default ProfileCard;

@@ -1,15 +1,13 @@
-function ProfileImage({image}){
+function ProfileImage({ image }) {
 
-    return(
+    return (
         <div className="image-box">
-
-            <img 
-            src={image}
-            alt="profile"
+            <img
+                src={image}
+                alt="profile"
             />
-
         </div>
-    )
+    );
 }
 
 export default ProfileImage;

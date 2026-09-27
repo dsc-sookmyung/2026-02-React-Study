@@ -1,194 +1,174 @@
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-
-body{
-
-    margin:0;
-
-    font-family:
-    "Pretendard",
-    sans-serif;
-
+body {
+    margin: 0;
+    font-family: "Pretendard", sans-serif;
 }
 
 
 /* 전체 배경 */
-.container{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #eaf7ff,
-        #d2effb
-    );
-
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f0;
+    padding: 40px 20px;
 }
-
 
 
 /* 프로필 카드 */
-.card{
+.card {
+    width: 650px;
+    background: #ffffff;
+    border: 1px solid #e5e5df;
+    border-radius: 20px;
+    padding: 40px;
+    transition: 0.3s;
+}
 
-    width:460px;
-
-    min-height:580px;
-
-    background:#f4f8fa;
-
-    border-radius:32px;
-
-    padding:50px 45px;
-
-    text-align:center;
-
-    border:1px solid #ead8c7;
-
-    box-shadow:
-    0 25px 60px rgba(90,60,30,0.22);
-
-    transition:.3s;
-
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 
-
-.card:hover{
-
-    transform:
-    translateY(-10px);
-
-    box-shadow:
-    0 25px 50px rgba(90,60,30,0.25);
-
+/* 프로필 상단 라벨 */
+.profile-label {
+    margin: 0 0 40px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #888880;
 }
 
+
+/* 프로필 상단 */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eeeeea;
+}
 
 
 /* 프로필 이미지 */
-.image-box img{
-
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 20px;
-
-}
-
-/* 프로필 이미지 중앙 정렬 */
 .image-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.image-box img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 16px;
+}
 
 
 /* 이름 */
-.content h1{
+.profile-info h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+    color: #222222;
+}
 
-    margin: 30px 0 15px;
 
-    font-size:36px;
+/* 학년 및 역할 */
+.role {
+    margin: 0;
+    color: #777777;
+    font-size: 16px;
+}
 
-    color:#3e2c23;
 
+/* ABOUT / INTERESTS / CONTACT */
+.about,
+.interests,
+.links-section {
+    padding-top: 35px;
+}
+
+
+/* 섹션 제목 */
+.about h2,
+.interests h2,
+.links-section h2 {
+    margin: 0 0 18px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #888880;
+}
+
+
+/* 자기소개 */
+.desc {
+    margin: 0;
+    color: #534e4b;
+    line-height: 1.8;
+}
+
+
+/* 관심 분야 목록 */
+.tags {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 
 /* 관심 분야 */
-.content h3 {
-    margin: 25px 0 15px;
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eeeeea;
+    color: #333333;
+    font-size: 16px;
 }
 
 
-
-/* 직무 */
-.role{
-
-    margin: 0 0 20px;
-
-    color:rgb(52, 38, 29);
-    
-    font-weight:bold;
-
+/* 관심 분야 번호 */
+.interest-number {
+    width: 30px;
+    color: #999999;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 
-
-/* 소개글 */
-.desc{
-
-    margin: 0 0 25px;
-
-    color:#534e4b;
-
-    line-height:1.6;
-
+/* 관심 분야 이름 */
+.interest-name {
+    font-weight: 500;
 }
 
 
-
-/* 관심 분야 영역 */
-.tags{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-
-
-/* 관심 분야 태그 */
-.tag{
-
-    padding:
-    8px 15px;
-
-    border-radius:20px;
-
-    background: #e3f2f9;
-
-    color: #5b8294;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:.2s;
-
-}
-
-
-.tag:hover{
-
-    background: #9ed8f0;
-    color: white;
-}
-
+/* 사이트 링크 */
 .links {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.links img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+.links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeea;
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+
+/* 사이트 링크 hover */
+.links a:hover {
+    padding-left: 8px;
+    color: #777777;
 }
