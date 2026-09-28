@@ -1,0 +1,245 @@
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 전체 페이지 */
+.page {
+    min-height: 100vh;
+    background-color: #F5F6F8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+/* 프로필 카드 뒤의 큰 네이비 직사각형 */
+.profile-background {
+    width: min(1100px, 100%);
+    min-height: 500px;
+
+    background-color: #001865;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 80px;
+    box-sizing: border-box;
+}
+
+/* 흰색 프로필 카드 */
+.profile-card {
+    width: 100%;
+
+    background-color: #FFFFFF;
+    border-radius: 30px;
+
+    padding: 46px 52px 28px;
+    box-sizing: border-box;
+
+    box-shadow: 0 20px 50px rgba(11, 25, 48, 0.22);
+}
+
+/* 사진 + 정보 영역 */
+.profile-main {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+
+    gap: 58px;
+    align-items: center;
+}
+
+/* 왼쪽 프로필 영역 */
+.profile-photo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-label {
+    margin: 0 0 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: #0B1930;
+    opacity: 0.55;
+}
+
+/* 프로필 사진 */
+.image-box {
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-color: #f8f8fa;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* 오른쪽 정보 영역 */
+.profile-info {
+    color: #0B1930;
+}
+
+.name-area h1 {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.role {
+    margin: 7px 0 0;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #0B1930;
+    opacity: 0.58;
+}
+
+/* 자기소개 */
+.description {
+    max-width: 570px;
+
+    margin: 27px 0 32px;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #0B1930;
+    opacity: 0.78;
+}
+
+/* 관심 분야 */
+.section-label {
+    margin: 0 0 13px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #0B1930;
+    opacity: 0.55;
+}
+
+.interest-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.interest-item {
+    background-color: #F5F6F8;
+    border-radius: 12px;
+
+    padding: 15px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #0B1930;
+}
+
+.interest-number {
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    opacity: 0.4;
+}
+
+/* GitHub 영역 */
+.github-area {
+    margin-top: 38px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(11, 25, 48, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #0B1930;
+}
+
+.github-area > span {
+    font-size: 13px;
+    font-weight: 600;
+
+    opacity: 0.5;
+}
+
+.github-area a {
+    color: #0B1930;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.github-area a:hover {
+    opacity: 0.55;
+}
+
+.github-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 화면이 좁아졌을 때 */
+@media (max-width: 800px) {
+    .page {
+    padding: 25px;
+    }
+
+    .profile-background {
+    padding: 35px 25px;
+    }
+
+    .profile-card {
+    padding: 35px 30px 25px;
+    }
+
+    .profile-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    }
+
+    .profile-photo-area {
+    align-items: center;
+    }
+
+    .profile-label {
+    align-self: flex-start;
+    }
+
+    .interest-list {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
