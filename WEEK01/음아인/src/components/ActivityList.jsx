@@ -5,11 +5,10 @@ function ActivityList() {
     <section>
       <h3>ACTIVITIES</h3>
 
-      <div>
-        {activities.map((activity, index) => (
-          <span key={activity}>
+      <div className="tag-list">
+        {activities.map((activity) => (
+          <span className="tag" key={activity}>
             {activity}
-            {index < activities.length - 1 && ' · '}
           </span>
         ))}
       </div>

@@ -1,5 +1,9 @@
 function ProfileImage() {
-  return null;
+  return (
+    <div className="profile-image">
+      <span>PHOTO</span>
+    </div>
+  );
 }
 
 export default ProfileImage;
