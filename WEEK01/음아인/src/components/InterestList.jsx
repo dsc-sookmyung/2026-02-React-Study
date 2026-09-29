@@ -1,26 +1,20 @@
-function InterestList({interests}){
+function InterestList() {
+  const interests = ['Backend', 'Cloud', 'AI'];
 
-    return(
-        <div className="tags">
+  return (
+    <section>
+      <h3>INTERESTS</h3>
 
-            {
-                interests.map((item,index)=>(
-
-                    <span 
-                    className="tag"
-                    key={index}
-                    >
-
-                    {item}
-
-                    </span>
-
-                ))
-            }
-
-        </div>
-    )
+      <div>
+        {interests.map((interest, index) => (
+          <span key={interest}>
+            {interest}
+            {index < interests.length - 1 && ' · '}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
 }
-
 
 export default InterestList;
