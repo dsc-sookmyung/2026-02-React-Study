@@ -1,8 +1,12 @@
+import profileImage from '../assets/profile.jpg';
+
 function ProfileImage() {
   return (
-    <div className="profile-image">
-      <span>PHOTO</span>
-    </div>
+    <img
+      className="profile-image"
+      src={profileImage}
+      alt="음아인 프로필"
+    />
   );
 }
 

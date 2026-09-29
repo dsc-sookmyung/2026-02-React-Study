@@ -21,7 +21,6 @@ main {
   box-sizing: border-box;
 }
 
-/* 상단 영역 */
 .profile-top {
   display: flex;
   justify-content: space-between;
@@ -58,24 +57,14 @@ p {
   margin: 0;
 }
 
-/* 프로필 이미지 */
 .profile-image {
   width: 180px;
   height: 180px;
   min-width: 180px;
   border-radius: 50%;
-  background-color: #dfeee3;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #587460;
-  font-size: 15px;
-  font-weight: bold;
+  object-fit: cover;
 }
 
-/* 섹션 */
 section {
   display: flex;
   align-items: center;
@@ -104,7 +93,6 @@ section h3 {
   font-size: 14px;
 }
 
-/* 하단 */
 footer {
   margin-top: 45px;
   padding-top: 24px;
@@ -130,7 +118,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* 작은 화면 대응 */
 @media (max-width: 700px) {
   main {
     padding: 40px 30px;
