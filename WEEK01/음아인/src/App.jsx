@@ -1,6 +1,7 @@
 import ProfileInfo from './components/ProfileInfo';
 import InterestList from './components/InterestList';
 import ActivityList from './components/ActivityList';
+import FooterInfo from './components/FooterInfo';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <ProfileInfo />
       <InterestList />
       <ActivityList />
+      <FooterInfo />
     </main>
   );
 }
