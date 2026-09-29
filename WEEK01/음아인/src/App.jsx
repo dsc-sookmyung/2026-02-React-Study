@@ -1,3 +1,4 @@
+import './App.css';
 import ProfileInfo from './components/ProfileInfo';
 import InterestList from './components/InterestList';
 import ActivityList from './components/ActivityList';
