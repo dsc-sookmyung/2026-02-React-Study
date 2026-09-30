@@ -28,7 +28,7 @@
 
 예시)
 
-<img width="283" height="159" alt="스크린샷 2026-09-24 오전 12 56 03" src="https://github.com/user-attachments/assets/6189302e-16e4-47cc-a975-5e3e4714e0dc" />
+
 
 
 ### PR 작성 규칙
