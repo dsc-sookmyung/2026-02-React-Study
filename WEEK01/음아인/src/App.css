@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #dfeee3;
+  color: #1f2a22;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 900px;
+  max-width: calc(100% - 60px);
+  padding: 60px 70px;
+  background-color: white;
+  border-radius: 28px;
+  box-sizing: border-box;
+}
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.profile-top > div:first-child {
+  flex: 1;
+}
+
+.profile-top p:first-child {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #587460;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 62px;
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 14px 0 18px;
+  font-size: 28px;
+}
+
+p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  margin-top: 28px;
+}
+
+section h3 {
+  width: 150px;
+  margin: 0;
+  color: #4d6b56;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 9px 16px;
+  background-color: #edf5ef;
+  border-radius: 20px;
+  color: #3f6b4e;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 24px;
+  border-top: 1px solid #d9e3db;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #66736a;
+}
+
+footer a {
+  color: #3f6b4e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 40px 30px;
+  }
+
+  .profile-top {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  section h3 {
+    width: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
