@@ -1,0 +1,133 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #222;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #777;
+  font-size: 16px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sold-out-card .product-image {
+  opacity: 0.55;
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-category {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #777;
+}
+
+.product-name {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.product-description {
+  min-height: 44px;
+  margin: 10px 0 16px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.product-price {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+@media (max-width: 900px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 40px 16px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
