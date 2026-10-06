@@ -1,4 +1,5 @@
 import './App.css';
+import ProductCard from './components/ProductCard';
 
 function App() {
   const products = [
@@ -36,6 +37,18 @@ function App() {
     <main>
       <h1>RAIVE 상품 목록</h1>
       <p>좋아하는 RAIVE 상품을 모아보았습니다.</p>
+
+      <div>
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            image={product.image}
+          />
+        ))}
+      </div>
     </main>
   );
 }
