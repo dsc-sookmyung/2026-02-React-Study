@@ -1,0 +1,215 @@
+.counter-card {
+  width: 420px;
+  padding: 38px 40px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.counter-label {
+  margin: 0 0 6px;
+  color: #6c63ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.counter-card h1 {
+  margin: 0;
+  color: #222;
+  font-size: 40px;
+}
+
+.description {
+  margin: 8px 0 25px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 현재 숫자 */
+
+.count-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+
+  background: #6c63ff;
+  color: white;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
+
+  transition: 0.3s;
+}
+
+.count-circle.success {
+  background: #22b573;
+
+  box-shadow:
+    0 10px 25px rgba(34, 181, 115, 0.3);
+}
+
+/* 목표 메시지 */
+
+.guide-message,
+.goal-message {
+  height: 22px;
+  margin: 16px 0 22px;
+  font-size: 14px;
+}
+
+.guide-message {
+  color: #888;
+}
+
+.goal-message {
+  color: #22a568;
+  font-weight: 700;
+}
+
+/* 설정 영역 */
+
+.section {
+  margin-top: 16px;
+  padding: 16px;
+
+  background: #f8f8fb;
+  border-radius: 14px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+
+  color: #555;
+  font-size: 13px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+/* 버튼 */
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.second-row,
+.custom-buttons {
+  margin-top: 10px;
+}
+
+.count-button {
+  flex: 1;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.count-button:hover {
+  transform: translateY(-2px);
+}
+
+.minus {
+  background: #ededf2;
+  color: #555;
+}
+
+.minus:hover {
+  background: #e2e2e8;
+}
+
+.plus {
+  background: #6c63ff;
+  color: white;
+}
+
+.plus:hover {
+  background: #5952db;
+}
+
+/* 증감 단위 입력 */
+
+.step-input {
+  width: 100%;
+
+  padding: 11px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  background: white;
+
+  font-size: 16px;
+  text-align: center;
+
+  outline: none;
+}
+
+.step-input:focus {
+  border-color: #6c63ff;
+}
+
+/* 라디오 */
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #555;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.radio-group input {
+  accent-color: #6c63ff;
+  cursor: pointer;
+}
+
+/* 초기화 */
+
+.reset-button {
+  width: 100%;
+
+  margin-top: 16px;
+  padding: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  background: white;
+  color: #777;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background: #f5f5f5;
+}
