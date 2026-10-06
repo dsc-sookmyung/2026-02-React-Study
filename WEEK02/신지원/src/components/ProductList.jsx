@@ -51,7 +51,7 @@ const products = [
     size: "H110xW90xD50mm",
     image: "https://chiikawamarket.jp/cdn/shop/files/4571609399247_1_pre.jpg?v=1787896650&width=1100",
     category: "인형",
-    isSoldOut: false,
+    isSoldOut: true,
   },
   {
     id: 6,

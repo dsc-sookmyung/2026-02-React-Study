@@ -8,7 +8,9 @@ function App() {
         <p className="eyebrow">REACT STUDY · WEEK 02</p>
         <h1>상품 목록</h1>
         <p className="subtitle">
-          치이카와 캐릭터 상품을 판매합니다~~!!
+          📢 극장판 : 치이카와 인어섬의 비밀 개봉 기념
+          <br />
+          한정판 굿즈 판매합니다!
         </p>
       </header>
 
