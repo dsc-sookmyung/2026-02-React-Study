@@ -7,15 +7,17 @@ function ProductCard({
   isSoldOut,
 }) {
   return (
-    <div>
-      <img src={image} alt={name} />
+    <div className="product-card">
+      <div className="image-wrap">
+        <img src={image} alt={name} />
 
-      <p>{category}</p>
+        {isSoldOut && <span className="sold-out">품절</span>}
+      </div>
+
+      <p className="category">{category}</p>
       <h2>{name}</h2>
-      <p>{description}</p>
-      <p>{price}</p>
-
-      {isSoldOut && <p>품절</p>}
+      <p className="description">{description}</p>
+      <p className="price">{price}</p>
     </div>
   );
 }
