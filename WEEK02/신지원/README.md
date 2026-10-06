@@ -1,16 +1,37 @@
-# React + Vite
+# 학습 내용
+이번 주차에는 props를 통한 데이터 전달에 대해 학습했습니다.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+- `props` 리액트 컴포넌트 내에서 값을 전달하는 핵심적인 수단
+- `props` 는 객체 형태가 되어 언급하여 사용하기 용이함
+- Props Drilling : 상위 컴포넌트의 데이터를 하위 컴포넌트로 전달할 때, 중간에 있는 여러 컴포넌트를 거쳐 `props` 를 계속 넘겨주는 현상
+- 구조 분해 할당 : 객체나 배열에서 필요한 값만 꺼내서 바로 쓰는 방법. 코드를 더 간결하게 만들고 가독성을 높여줌.
+<br><br>
 
-Currently, two official plugins are available:
+# 구현 내용
+<br>
+React 컴포넌트와 props, map()을 활용하여 치이카와 상품 목록을 구현했습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- ProductList와 ProductCard 컴포넌트로 상품 목록과 상품 카드를 분리
+- `size` props 추가하여 `description` 이외의 상품정보 추가
+- JavaScript 객체 배열로 상품 이름, 가격, 설명, 사이즈, 이미지, 카테고리 등의 데이터 관리
+- map()을 활용하여 상품 배열을 반복 렌더링
+- 상품의 고유한 id를 key로 지정하여 각 상품을 구분
+- props를 활용하여 ProductList에서 ProductCard로 상품 데이터 전달
+- 구조분해할당을 활용하여 전달받은 props를 간단하게 사용
+- 조건부 렌더링을 활용하여 품절 상품에 SOLD OUT 뱃지 표시
+<br><br>
 
-## React Compiler
+# 배운점
+ProductList에서 상품 데이터를 관리하고 ProductCard에 props로 전달하면서, 컴포넌트 간 데이터를 전달하는 방법을 이해했습니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+JavaScript의 map()을 활용하면 상품처럼 반복되는 데이터를 하나씩 작성하지 않고 배열의 데이터를 기반으로 여러 UI를 효율적으로 렌더링할 수 있다는 점도 배웠습니다. 이때 React에서는 각각의 요소를 구분하기 위해 고유한 값을 `key`로 지정해야 한다는 것도 알게 되었습니다.
 
-## Expanding the Oxlint configuration
+그리고 `isSoldOut` 값에 따라 SOLD OUT 뱃지를 보여주는 조건부 렌더링을 직접 구현하면서, 데이터의 상태에 따라 화면을 다르게 표현하는 방법을 경험했습니다.
+<br><br>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# 스터디원들과 공유하고 싶은 부분
+이번 과제에서는 ProductList와 ProductCard를 분리하여 상품 데이터와 상품 UI의 역할을 나누어 구성해보았습니다. 특히 ProductList에서 `map()`을 사용해 여러 상품을 렌더링하고, 각각의 상품 정보를 props로 ProductCard에 전달하는 과정을 직접 구현하면서 컴포넌트 간 데이터 흐름을 이해할 수 있었습니다.
+
+또한 상품 카드의 디자인을 직접 수정하면서 `margin`, `padding`, `flex` 등을 활용해 요소의 위치와 간격을 조절하는 방법도 함께 익혔습니다.
+
+디자인을 할 때, `margin`이나 `padding` 값이 제가 의도한 대로 수정되지 않았는데, 다른 멤버분들도 디자인 부분이 헷갈렸는지 궁금합니다.
