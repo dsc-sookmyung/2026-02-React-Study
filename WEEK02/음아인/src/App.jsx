@@ -9,6 +9,8 @@ function App() {
       price: '40,600원',
       description: '한쪽 어깨가 드러나는 오프숄더 티셔츠입니다.',
       image: '',
+      category: 'TOP',
+      isSoldOut: false,
     },
     {
       id: 2,
@@ -16,6 +18,8 @@ function App() {
       price: '58,000원',
       description: '빈티지 레터링이 들어간 긴팔 티셔츠입니다.',
       image: '',
+      category: 'TOP',
+      isSoldOut: false,
     },
     {
       id: 3,
@@ -23,6 +27,8 @@ function App() {
       price: '118,000원',
       description: '벨트 디테일이 있는 미니 스커트입니다.',
       image: '',
+      category: 'SKIRT',
+      isSoldOut: false,
     },
     {
       id: 4,
@@ -30,6 +36,8 @@ function App() {
       price: '70,400원',
       description: '그래픽 프린트가 들어간 오버핏 맨투맨입니다.',
       image: '',
+      category: 'SWEATSHIRT',
+      isSoldOut: true,
     },
   ];
 
@@ -46,6 +54,8 @@ function App() {
             price={product.price}
             description={product.description}
             image={product.image}
+            category={product.category}
+            isSoldOut={product.isSoldOut}
           />
         ))}
       </div>
