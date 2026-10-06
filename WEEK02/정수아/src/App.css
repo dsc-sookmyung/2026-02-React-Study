@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  min-height: 100vh;
+  padding: 50px 20px;
+
+  background-color: #f8f5ef;
+}
+
+.menu-title {
+  margin: 0 0 45px;
+
+  text-align: center;
+
+  font-family: Georgia, serif;
+  font-size: 48px;
+  letter-spacing: 10px;
+
+  color: #302c27;
+}
+
+.menu-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
