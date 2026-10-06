@@ -1,0 +1,296 @@
+/* 기본 설정 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #fffafd;
+  color: #333;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* 전체 페이지 */
+
+.app {
+  width: 88%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+
+/* 상단 제목 영역 */
+
+.header {
+  text-align: center;
+
+  padding: 55px 20px 45px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  color: #aaa;
+}
+
+.header h1 {
+  margin: 0 0 12px;
+
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+
+  color: #333;
+}
+
+.subtitle {
+  margin: 0;
+
+  font-size: 17px;
+  color: #999;
+}
+
+
+/* 상품 목록 */
+
+.product-list {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  gap: 18px;
+}
+
+
+/* 상품 카드 */
+
+.product-card {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+  min-height: 190px;
+
+  padding: 20px 24px;
+
+  background-color: #fff;
+
+  border: 1px solid #f0e9ee;
+  border-radius: 18px;
+
+  box-shadow: 0 3px 12px rgba(180, 150, 170, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* 마우스를 올렸을 때 살짝 올라오는 효과 */
+
+.product-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(180, 150, 170, 0.14);
+}
+
+
+/* 이미지 영역 */
+
+.image-box {
+  position: relative;
+
+  width: 150px;
+  height: 150px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 30px;
+  margin-left: 50px;
+
+  border: 1px solid #f1e8ed;
+  border-radius: 16px;
+
+  box-shadow: 0 3px 10px rgba(180, 150, 170, 0.08);
+
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* 상품 정보 */
+
+.product-content {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 250px;
+}
+
+
+/* 카테고리 */
+
+.category {
+  width: fit-content;
+
+  margin: 0 0 8px;
+
+  padding: 4px 9px;
+
+  background-color: #f4efff;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #8b78b8;
+}
+
+
+/* 상품 이름 */
+
+.product-content h2 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.5px;
+
+  color: #333;
+}
+
+
+/* 상품 설명 */
+
+.description {
+  margin: 0;
+
+  max-width: 500px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #999;
+}
+
+/* 사이즈 */
+.product-size {
+  margin: 0;
+
+  max-width: 500px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #999;
+}
+
+/* 가격 */
+
+.price {
+  margin: 15px 0 0;
+
+  max-width: 500px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #999;
+}
+
+
+
+/* 품절 뱃지 */
+
+.sold-out-badge {
+  position: absolute;
+
+  bottom: 9px;
+  right: 9px;
+
+  padding: 5px 8px;
+
+  background-color: #d15555;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  color: white;
+}
+
+
+/* 화면이 작아졌을 때 */
+
+@media (max-width: 700px) {
+  .app {
+    width: 92%;
+  }
+
+  .header {
+    padding: 40px 10px 30px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .image-box {
+    width: 110px;
+    height: 110px;
+
+    margin-right: 18px;
+  }
+
+  .product-content h2 {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .price-area {
+    width: 90px;
+    margin-left: 10px;
+  }
+
+  .price-area strong {
+    font-size: 15px;
+  }
+}
