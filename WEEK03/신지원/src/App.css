@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 32px;
+  margin: 0 0 32px;
   color: #26334d;
   font-size: 32px;
 }
@@ -78,7 +78,6 @@ button:hover {
 
 .reset-button {
   width: 100%;
-  margin-top: auto;
   margin-top: 32px;
   background-color: #e6e9f1;
   color: #414b61;
