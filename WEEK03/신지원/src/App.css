@@ -82,3 +82,44 @@ button:hover {
   background-color: #e6e9f1;
   color: #414b61;
 }
+
+
+.point-settings {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: #f0f1f7;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.settings-title {
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #414b61;
+}
+
+.point-settings label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #555b68;
+  cursor: pointer;
+}
+
+.point-settings input[type='radio'] {
+  accent-color: #7167ff;
+  cursor: pointer;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
