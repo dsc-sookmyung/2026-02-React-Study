@@ -1,0 +1,85 @@
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 32px;
+  color: #26334d;
+  font-size: 32px;
+}
+
+.point-card {
+  width: 100%;
+  padding: 32px 20px;
+  margin-bottom: 32px;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.point-label {
+  margin: 0 0 12px;
+  color: #7b8498;
+  font-size: 16px;
+}
+
+.point-value {
+  margin: 0;
+  color: #5267d8;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.button-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+button {
+  padding: 16px 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #5267d8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.reset-button {
+  width: 100%;
+  margin-top: auto;
+  margin-top: 32px;
+  background-color: #e6e9f1;
+  color: #414b61;
+}
