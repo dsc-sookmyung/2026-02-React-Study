@@ -11,34 +11,38 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f7fb;
+  background-color: #f4f4f4;
 }
 
 .app {
-  width: 100%;
+  width: calc(100% - 32px);
   max-width: 600px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 48px 24px 32px;
+  padding: 30px 24px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #ffffff;
 }
 
 h1 {
-  margin: 0 0 32px;
-  color: #26334d;
+  margin: 0 0 20px;
+  color: #292D3E;
   font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1.2px;
 }
 
 .point-card {
   width: 100%;
-  padding: 32px 20px;
-  margin-bottom: 32px;
-  border-radius: 20px;
-  background-color: white;
+  margin-bottom: 24px;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 16px;
 }
 
 .point-label {
@@ -48,10 +52,20 @@ h1 {
 }
 
 .point-value {
-  margin: 0;
-  color: #5267d8;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: linear-gradient(145deg, #8172ff, #5b4be0);
+  color: #ffffff;
+
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(101, 79, 224, 0.3);
 }
 
 .button-group {
@@ -59,6 +73,10 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  margin-top: 36px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: #f0f1f7;
 }
 
 button {
@@ -96,11 +114,22 @@ button:hover {
   gap: 16px;
 }
 
+.point-guide {
+  grid-column: 1 / -1;
+  margin: 0 0 4px;
+  color: #77738a;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
 .settings-title {
+  grid-column: 1 / -1;
   width: 100%;
   margin: 0;
   font-weight: bold;
   color: #414b61;
+  margin-bottom: 10px;
 }
 
 .point-settings label {

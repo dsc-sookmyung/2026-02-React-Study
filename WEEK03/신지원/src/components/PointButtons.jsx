@@ -31,6 +31,14 @@ function PointButtons({
   return (
     <>
       <div className="button-group">
+        <p className="settings-title">기본 설정</p>
+
+        <p className="point-guide">
+          📢 제출 +1점 · 지각 제출 -1점
+          <br />
+          📢 우수작 보너스 +5점 · 미제출 페널티 -5점
+        </p>
+
         <button onClick={handleSubmit}>제출</button>
         <button onClick={handleLateSubmit}>지각 제출</button>
         <button onClick={handleBestWork}>금주 우수작 보너스</button>

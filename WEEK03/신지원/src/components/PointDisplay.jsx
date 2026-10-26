@@ -10,7 +10,7 @@ function PointDisplay({ points }) {
         <p className="goal-message">🎉 목표 달성!</p>
       ) : (
         <p className="goal-message">
-          목표까지 {10-points}점 남았습니다.
+          목표까지 {10-points}점 남았습니다 😭
         </p>
       )}
     </>
