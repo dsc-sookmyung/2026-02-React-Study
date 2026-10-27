@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import WaterDisplay from './WaterDisplay.jsx';
 
 function WaterCounter() {
   const [count, setCount] = useState(0);
@@ -18,7 +19,7 @@ function WaterCounter() {
         <h1>한 모금 기록</h1>
         <p className="subtitle">책상 옆 물 한 잔, 잊지 않고 챙기기.</p>
       </header>
-      <p className="count"><strong>{count}</strong> 잔</p>
+      <WaterDisplay count={count} goal={10} />
       <div className="basic-controls">
         <button disabled={count === 0} onClick={() => handleChange(-1)}>−1 잔</button>
         <button className="primary" onClick={() => handleChange(1)}>+1 잔</button>
