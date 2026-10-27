@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import WaterDisplay from './WaterDisplay.jsx';
+import StepControls from './StepControls.jsx';
 
 function WaterCounter() {
   const [count, setCount] = useState(0);
+  const [step, setStep] = useState('2');
 
   const handleChange = (amount) => {
     setCount((previous) => Math.max(0, previous + amount));
@@ -28,6 +30,7 @@ function WaterCounter() {
         <button disabled={count === 0} onClick={() => handleChange(-5)}>−5 잔</button>
         <button onClick={() => handleChange(5)}>+5 잔</button>
       </div>
+      <StepControls step={step} onStepChange={setStep} onChange={handleChange} count={count} />
       <button className="reset" onClick={handleReset}>기록 초기화</button>
     </main>
   );
