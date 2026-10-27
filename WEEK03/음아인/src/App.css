@@ -1,55 +1,155 @@
 .water-counter {
-  width: min(480px, calc(100% - 40px));
+  width: calc(100% - 32px);
+  max-width: 400px;
   margin: 48px auto;
-  padding: 36px 38px 24px;
-  border: 1px solid #dce7eb;
-  border-radius: 26px;
-  background: #fff;
-  box-shadow: 0 14px 45px #2547560a;
+  padding: 28px 24px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
 }
-.eyebrow { margin: 0 0 12px; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #547d8f; }
-h1 { margin: 0; font-size: 30px; letter-spacing: -1.5px; }
-.subtitle { margin: 12px 0 28px; font-size: 13px; color: #667e89; }
-.water-display { padding: 26px 12px 18px; border-radius: 18px; background: #f1f8fb; text-align: center; }
-.glass { position: relative; width: 94px; height: 114px; margin: 0 auto 18px; overflow: hidden; border: 3px solid #70a5bd; border-top: 0; border-radius: 4px 4px 24px 24px; background: #fff; }
-.water { position: absolute; bottom: 0; width: 100%; background: #a5d8ed; transition: height .35s ease; border-radius: 35% 35% 0 0 / 8px 8px 0 0; }
-.glass-mark { position: absolute; inset: 34px 0 0; font-size: 32px; color: #376b82; }
-.count { margin: 0; display: flex; align-items: baseline; justify-content: center; gap: 8px; }
-.count strong { font-size: 48px; font-weight: 600; line-height: 1.1; letter-spacing: -2px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-.count span { font-size: 13px; flex-shrink: 0; }
-.message { min-height: 20px; margin: 14px 0 18px; font-size: 12px; line-height: 1.6; }
-.stamps { display: flex; justify-content: center; gap: 9px; color: #d9e7ee; font-size: 17px; }
-.stamps .filled { color: #4388a8; }
-.goal-caption { margin: 10px 0 0; font-size: 11px; color: #5b7683; }
-.complete { background: #eef7ef; }
-.complete .water { background: #b8d9bd; }
-.complete .glass { border-color: #719b79; }
-.complete .filled, .complete .glass-mark { color: #487650; }
-button { min-height: 46px; border: 1px solid #d7e3e9; border-radius: 11px; color: #325a6d; background: #fff; font-size: 14px; font-weight: 600; transition: background .15s; }
-button:hover:not(:disabled) { background: #edf5f9; }
-button.primary { background: #407d99; color: #fff; border-color: #407d99; }
-button.primary:hover { background: #316983; }
-button:disabled { opacity: .4; cursor: default; }
-.basic-controls, .quick-controls, .custom-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.basic-controls { margin-top: 22px; }
-.quick-controls { margin-top: 8px; }
-.quick-controls button { min-height: 36px; border: 0; background: #f3f7f9; font-size: 12px; }
-.step-settings { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e8eef1; }
-.step-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.step-heading label { font-size: 12px; font-weight: 600; }
-.step-heading input { width: 68px; height: 34px; padding: 5px 8px; border: 1px solid #cddde5; border-radius: 8px; color: #325a6d; background: #fff; }
-.input-guide { font-size: 11px; line-height: 1.6; color: #69818c; margin: 10px 0 12px; }
-.input-guide.error { color: #a94237; }
-.custom-controls button { min-height: 38px; font-size: 12px; }
-.reset { display: block; margin: 20px auto 0; min-height: 36px; padding: 0 14px; border: 0; color: #6b7e87; font-size: 12px; font-weight: 400; }
 
-footer { margin-top: 14px; font-size: 10px; line-height: 1.6; color: #6b7e87; text-align: center; }
-button:focus-visible, input:focus-visible { outline: 3px solid #85b8d0; outline-offset: 3px; }
-@media (max-width: 420px) {
-  .water-counter { width: calc(100% - 24px); margin: 16px auto; padding: 28px 22px 20px; }
-  h1 { font-size: 27px; }
-  .stamps { gap: 7px; }
+h1 {
+  margin: 0;
+  font-size: 26px;
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; }
+
+.subtitle {
+  margin: 12px 0 28px;
+  color: #777;
+  font-size: 14px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #e6f2fa;
+  color: #306b94;
+}
+
+.count strong {
+  font-size: 42px;
+  overflow-wrap: anywhere;
+}
+
+.count span {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.complete .count {
+  background: #e8f4e9;
+  color: #398347;
+}
+
+.message {
+  margin: 18px 0 24px;
+  font-size: 14px;
+  color: #666;
+}
+
+.complete .message {
+  color: #398347;
+  font-weight: bold;
+}
+
+.basic-controls, .quick-controls, .custom-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quick-controls {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f3f3f3;
+  color: #333;
+  cursor: pointer;
+}
+
+.primary {
+  border-color: #4e8eb9;
+  background: #4e8eb9;
+  color: white;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.step-settings {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 6px;
+  background: #f8f8f8;
+  text-align: left;
+}
+
+.step-heading label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.step-heading input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.input-guide {
+  margin: 10px 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.error {
+  color: #b34040;
+}
+
+.custom-controls button {
+  font-size: 13px;
+}
+
+.reset {
+  width: 100%;
+  margin-top: 20px;
+  background: white;
+}
+
+.notice {
+  margin: 16px 0 0;
+  color: #777;
+  font-size: 12px;
+}
+
+button:focus-visible, input:focus-visible {
+  outline: 2px solid #306b94;
+  outline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  .water-counter {
+    margin: 20px auto;
+    padding: 24px 18px;
+  }
 }

@@ -18,9 +18,8 @@ function WaterCounter() {
   return (
     <main className="water-counter">
       <header>
-        <p className="eyebrow">AHIN’S WATER DIARY</p>
-        <h1>한 모금 기록</h1>
-        <p className="subtitle">책상 옆 물 한 잔, 잊지 않고 챙기기.</p>
+        <h1>물 마시기 카운터</h1>
+        <p className="subtitle">물 마신 횟수를 기록해보세요.</p>
       </header>
       <WaterDisplay count={count} goal={10} />
       <div className="basic-controls">
@@ -33,7 +32,7 @@ function WaterCounter() {
       </div>
       <StepControls step={step} onStepChange={setStep} onChange={handleChange} count={count} />
       <button className="reset" disabled={count === 0} onClick={handleReset}>기록 초기화</button>
-      <footer>물 마신 횟수를 기록해요 · 새로고침하면 기록이 사라져요</footer>
+      <p className="notice">새로고침하면 기록이 초기화됩니다.</p>
     </main>
   );
 }
