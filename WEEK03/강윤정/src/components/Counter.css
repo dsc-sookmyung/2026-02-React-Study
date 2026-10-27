@@ -1,0 +1,371 @@
+/* 전체 카드 */
+
+.counter-card {
+  position: relative;
+
+  width: 420px;
+  padding: 38px 36px 34px;
+
+  background-color: #E2DFD0;
+
+  border: 3px solid #F97300;
+  border-radius: 22px;
+
+  box-shadow:
+    0 14px 0 rgba(0, 0, 0, 0.15),
+    0 22px 40px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+}
+
+
+/* 오른쪽 위 거미줄 */
+
+.web-decoration {
+  position: absolute;
+
+  top: 12px;
+  right: 16px;
+
+  font-size: 34px;
+
+  opacity: 0.8;
+
+  transform: rotate(8deg);
+}
+
+
+/* 상단 작은 제목 */
+
+.counter-label {
+  margin: 0 0 8px;
+
+  color: #F97300;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* 메인 제목 */
+
+.counter-card h1 {
+  margin: 0;
+
+  color: #32012F;
+
+  font-size: 38px;
+}
+
+
+/* 설명 */
+
+.description {
+  margin: 8px 0 26px;
+
+  color: #524C42;
+
+  font-size: 14px;
+}
+
+
+/* 현재 숫자 영역 */
+
+.count-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 180px;
+  height: 160px;
+
+  margin: 0 auto;
+
+  background-color: #F97300;
+
+  border: 4px solid #32012F;
+  border-radius: 50%;
+
+  color: #32012F;
+
+  box-shadow: 0 8px 0 #32012F;
+
+  transition: 0.3s;
+}
+
+
+/* 숫자 */
+
+.count-number {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+
+/* 목표 달성 시 숫자 박스 */
+
+.count-box.success {
+  background-color: #F97300;
+
+  border-color: #32012F;
+
+  color: #32012F;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 0 #32012F;
+}
+
+
+/* 목표 메시지 공통 */
+
+.guide-message,
+.goal-message {
+  min-height: 22px;
+
+  margin: 17px 0 22px;
+
+  font-size: 14px;
+}
+
+
+/* 목표 달성 전 */
+
+.guide-message {
+  color: #524C42;
+}
+
+
+/* 목표 달성 */
+
+.goal-message {
+  padding: 10px 14px;
+
+  background-color: #F97300;
+
+  border: 2px solid #32012F;
+  border-radius: 10px;
+
+  color: #32012F;
+
+  font-weight: 700;
+}
+
+
+/* 각 기능 영역 */
+
+.section {
+  margin-top: 14px;
+  padding: 16px;
+
+  background-color: rgba(255, 255, 255, 0.28);
+
+  border: 1px solid #524C42;
+  border-radius: 14px;
+}
+
+
+/* 섹션 제목 */
+
+.section-title {
+  margin: 0 0 12px;
+
+  color: #32012F;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+
+/* 증감 단위 설명 */
+
+.step-description {
+  margin: -4px 0 10px;
+
+  color: #524C42;
+
+  font-size: 12px;
+  text-align: left;
+}
+
+
+/* 버튼 묶음 */
+
+.button-group {
+  display: flex;
+
+  gap: 10px;
+}
+
+
+.second-row,
+.custom-buttons {
+  margin-top: 10px;
+}
+
+
+/* 버튼 공통 */
+
+.count-button {
+  flex: 1;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+/* 감소 버튼 */
+
+.minus {
+  background-color: transparent;
+
+  border: 2px solid #524C42;
+
+  color: #524C42;
+}
+
+
+.minus:hover {
+  background-color: #524C42;
+
+  color: #E2DFD0;
+}
+
+
+/* 증가 버튼 */
+
+.plus {
+  background-color: #F97300;
+
+  border: 2px solid #F97300;
+
+  color: #32012F;
+}
+
+
+.plus:hover {
+  background-color: #32012F;
+
+  border-color: #32012F;
+
+  color: #E2DFD0;
+}
+
+/* 증감 단위 입력창 */
+
+.step-input {
+  width: 100%;
+
+  padding: 11px;
+
+  background-color: #E2DFD0;
+
+  border: 2px solid #524C42;
+  border-radius: 10px;
+
+  color: #32012F;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+
+.step-input:focus {
+  border-color: #F97300;
+
+  box-shadow: 0 0 0 3px rgba(249, 115, 0, 0.15);
+}
+
+
+/* 음수 설정 */
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+/* 음수 설정 항목 */
+
+.radio-group label {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px;
+
+  background-color: #E2DFD0;
+
+  border: 1px solid #524C42;
+  border-radius: 10px;
+
+  color: #524C42;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* 라디오 버튼 */
+
+.radio-group input {
+  accent-color: #F97300;
+
+  cursor: pointer;
+}
+
+
+/* 초기화 버튼 */
+
+.reset-button {
+  width: 100%;
+
+  margin-top: 18px;
+  padding: 12px;
+
+  background-color: #32012F;
+
+  border: 2px solid #32012F;
+  border-radius: 10px;
+
+  color: #E2DFD0;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.reset-button:hover {
+  background-color: #524C42;
+
+  border-color: #524C42;
+}
