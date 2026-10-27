@@ -4,7 +4,7 @@ function WaterCounter() {
   const [count, setCount] = useState(0);
 
   const handleChange = (amount) => {
-    setCount((previous) => previous + amount);
+    setCount((previous) => Math.max(0, previous + amount));
   };
 
   const handleReset = () => {
@@ -20,8 +20,12 @@ function WaterCounter() {
       </header>
       <p className="count"><strong>{count}</strong> 잔</p>
       <div className="basic-controls">
-        <button onClick={() => handleChange(-1)}>−1 잔</button>
+        <button disabled={count === 0} onClick={() => handleChange(-1)}>−1 잔</button>
         <button className="primary" onClick={() => handleChange(1)}>+1 잔</button>
+      </div>
+      <div className="quick-controls">
+        <button disabled={count === 0} onClick={() => handleChange(-5)}>−5 잔</button>
+        <button onClick={() => handleChange(5)}>+5 잔</button>
       </div>
       <button className="reset" onClick={handleReset}>기록 초기화</button>
     </main>
