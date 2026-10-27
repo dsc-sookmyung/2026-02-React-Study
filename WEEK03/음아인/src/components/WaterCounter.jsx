@@ -7,7 +7,8 @@ function WaterCounter() {
   const [step, setStep] = useState('2');
 
   const handleChange = (amount) => {
-    setCount((previous) => Math.max(0, previous + amount));
+    if (!Number.isSafeInteger(amount)) return;
+    setCount((previous) => Math.min(Number.MAX_SAFE_INTEGER, Math.max(0, previous + amount)));
   };
 
   const handleReset = () => {
@@ -31,7 +32,8 @@ function WaterCounter() {
         <button onClick={() => handleChange(5)}>+5 잔</button>
       </div>
       <StepControls step={step} onStepChange={setStep} onChange={handleChange} count={count} />
-      <button className="reset" onClick={handleReset}>기록 초기화</button>
+      <button className="reset" disabled={count === 0} onClick={handleReset}>기록 초기화</button>
+      <footer>물 마신 횟수를 기록해요 · 새로고침하면 기록이 사라져요</footer>
     </main>
   );
 }
