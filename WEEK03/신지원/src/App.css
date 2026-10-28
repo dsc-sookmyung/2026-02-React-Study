@@ -1,0 +1,154 @@
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app {
+  width: calc(100% - 32px);
+  max-width: 600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 30px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: #292D3E;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+}
+
+.point-card {
+  width: 100%;
+  margin-bottom: 24px;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 16px;
+}
+
+.point-label {
+  margin: 0 0 12px;
+  color: #7b8498;
+  font-size: 16px;
+}
+
+.point-value {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: linear-gradient(145deg, #8172ff, #5b4be0);
+  color: #ffffff;
+
+  font-size: 48px;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(101, 79, 224, 0.3);
+}
+
+.button-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 36px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: #f0f1f7;
+}
+
+button {
+  padding: 16px 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #5267d8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.reset-button {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #e6e9f1;
+  color: #414b61;
+}
+
+
+.point-settings {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: #f0f1f7;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.point-guide {
+  grid-column: 1 / -1;
+  margin: 0 0 4px;
+  color: #77738a;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.settings-title {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #414b61;
+  margin-bottom: 10px;
+}
+
+.point-settings label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #555b68;
+  cursor: pointer;
+}
+
+.point-settings input[type='radio'] {
+  accent-color: #7167ff;
+  cursor: pointer;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
