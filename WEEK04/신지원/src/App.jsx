@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
 
     setHistory((prev) => [keyword, ...prev]);   //prev : 상태 변경 직전 최신 history 값
     setSearch("");                    //검색 후, 검색창 초기화
+    inputRef.current.focus();         //검색 후, 검색창에 포커스
   };
 
   // 검색 기록 전체 삭제
@@ -25,12 +26,19 @@ function App() {
     setHistory([]);                    //기존 검색 배열 -> 빈 배열로 변경
   };
 
+  const inputRef = useRef(null);       //Dom 요소를 참조할 변수
+
+  useEffect(() => {
+    inputRef.current.focus();          //컴포넌트가 마운트(화면에 처음 나타남) 될 때, 검색창에 포커스
+  }, []);                              //의존성 배열이 빈 배열 -> 처음 마운트 된 후 실행
+
   return (
     <div className="container">
       <h1>검색 페이지</h1>
 
       <div className="search">
         <input
+          ref={inputRef}
           type="text"
           placeholder="검색어를 입력하세요"
           value={search}
@@ -38,6 +46,7 @@ function App() {
           onKeyDown ={(e) => {
             if (e.key === "Enter") handleSearch();
           }}
+          ref={inputRef}
         />
         <button onClick={handleSearch}>검색</button>
       </div>
@@ -48,8 +57,7 @@ function App() {
           <button onClick={handleDelete}>전체 삭제</button>
         </div>
 
-      //검색 기록 조건부 렌더링
-        {history.length === 0 ? (    //삼항 연산자
+        {history.length === 0 ? (    //검색 기록 조건부 렌더링 (삼항 연산자)
         <p>검색 기록이 없습니다.</p>    //참일떄
         ) : (                        //거짓일떄
           <ul>
