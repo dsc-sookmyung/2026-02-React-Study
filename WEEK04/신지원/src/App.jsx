@@ -3,7 +3,10 @@ import "./App.css";
 
 function App() {
   const [search, setSearch] = useState("");         //검색어
-  const [history, setHistory] = useState([]);       //검색 기록
+  const [history, setHistory] = useState(() => {    //검색 기록
+    const savedHistory = localStorage.getItem("history");   //로컬 스토리지에서 검색 기록 가져오기
+    return savedHistory ? JSON.parse(savedHistory) : [];    //저장된 데이터 있는지 확인
+  });       
 
   // 검색어 입력 관리
   const handleChange = (e) => {     //e 는 이벤트 객체 (입력 동작 발생 -> 동작 정보를 함수에 전달)
@@ -29,8 +32,8 @@ function App() {
   const inputRef = useRef(null);       //Dom 요소를 참조할 변수
 
   useEffect(() => {
-    inputRef.current.focus();          //컴포넌트가 마운트(화면에 처음 나타남) 될 때, 검색창에 포커스
-  }, []);                              //의존성 배열이 빈 배열 -> 처음 마운트 된 후 실행
+    localStorage.setItem("history", JSON.stringify(history));   //history 배열을 문자열로 변환 후 로컬 스토리지에 저장
+  }, [history]);                       //의존성 배열 -> history 값이 변경될 때마다 useEffect 실행
 
   return (
     <div className="container">
@@ -46,7 +49,6 @@ function App() {
           onKeyDown ={(e) => {
             if (e.key === "Enter") handleSearch();
           }}
-          ref={inputRef}
         />
         <button onClick={handleSearch}>검색</button>
       </div>
