@@ -10,3 +10,7 @@ body {
 input, button {
   font: inherit;
 }
+
+body {
+  background: #fff5f7;
+}

@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>검색 페이지</h1>
+      <h1>궁금한것들을 검색해보세요</h1>
       <div className="search">
         <input
           ref={inputRef}

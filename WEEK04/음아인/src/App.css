@@ -1,5 +1,86 @@
 .container {
+  width: calc(100% - 32px);
   max-width: 500px;
   margin: 60px auto;
   padding: 30px;
+  border: 1px solid #ddc6be;
+  border-radius: 10px;
+  background: white;
+  color: #604438;
+}
+
+h1 {
+  margin: 0 0 30px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #cfaeaa;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #785548;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #604438;
+}
+
+input:focus-visible, button:focus-visible {
+  outline: 2px solid #a86b7c;
+  outline-offset: 2px;
+}
+
+.history {
+  margin-top: 30px;
+}
+
+.history-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.history-title button {
+  padding: 8px 10px;
+  background: #f3d6de;
+  color: #604438;
+  font-size: 13px;
+}
+
+.history ul {
+  padding: 0;
+  list-style: none;
+}
+
+.history li {
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #fceef2;
+  overflow-wrap: anywhere;
+}
+
+.history p {
+  color: #82685e;
+  font-size: 14px;
 }
