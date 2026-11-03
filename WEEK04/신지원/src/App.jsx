@@ -6,7 +6,7 @@ function App() {
   const [history, setHistory] = useState(() => {    //검색 기록
     const savedHistory = localStorage.getItem("history");   //로컬 스토리지에서 검색 기록 가져오기
     return savedHistory ? JSON.parse(savedHistory) : [];    //저장된 데이터 있는지 확인
-  });       
+  });                                                       //return 값이 state의 초기값이 됨!!
 
   // 검색어 입력 관리
   const handleChange = (e) => {     //e 는 이벤트 객체 (입력 동작 발생 -> 동작 정보를 함수에 전달)
@@ -55,7 +55,10 @@ function App() {
 
       <div className="history">
         <div className="history-title">
-          <h2>검색 기록</h2>
+          <div>
+            <h2>검색 기록</h2>
+            <p>최근 검색한 키워드를 확인해 보세요.</p>
+          </div>
           <button onClick={handleDelete}>전체 삭제</button>
         </div>
 
