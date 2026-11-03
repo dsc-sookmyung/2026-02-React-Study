@@ -1,20 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
   const [search, setSearch] = useState('');
-  const [history, setHistory] = useState([
-    '올리브영 세일 기간',
-    '피부 뒤집어졌을때 해결 방법',
-    '20대 영양제 추천',
-  ]);
+  const [history, setHistory] = useState(() => {
+    const savedHistory = localStorage.getItem('ahinSearchHistory');
+    return savedHistory ? JSON.parse(savedHistory) : [
+      '올리브영 세일 기간',
+      '피부 뒤집어졌을때 해결 방법',
+      '20대 영양제 추천',
+    ];
+  });
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('ahinSearchHistory', JSON.stringify(history));
+  }, [history]);
 
   const handleSearch = () => {
     const keyword = search.trim();
-    if (keyword === '') return;
+    if (keyword === '') {
+      inputRef.current.focus();
+      return;
+    }
 
     setHistory((prev) => [keyword, ...prev]);
     setSearch('');
+    inputRef.current.focus();
   };
 
   const handleDelete = () => {
@@ -26,6 +42,7 @@ function App() {
       <h1>검색 페이지</h1>
       <div className="search">
         <input
+          ref={inputRef}
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
