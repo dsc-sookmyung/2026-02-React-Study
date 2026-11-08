@@ -23,6 +23,7 @@ header h2 {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 1px;
+  color: #176B68;
 }
 
 /* 메인 영역 */
@@ -180,6 +181,32 @@ main > p {
   white-space: pre-line;
 }
 
+/* 자세히 살펴보기 */
+.place-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eeeeee;
+  color: #176B68;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.place-more span {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.place-card:hover .place-more {
+  color: #105653;
+}
+
+.place-card:hover .place-more span {
+  transform: translateX(5px);
+}
+
 
 /* 지역 선택 영역 */
 .region-list {
@@ -194,10 +221,10 @@ main > p {
 .region-button {
   width: 100%;
   padding: 10px 0;
-  border: 1px solid #e0e7eb;
+  border: 1px solid #c8dedb;
   border-radius: 30px;
   background-color: white;
-  color: #607d8b;
+  color: #176B68;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -206,17 +233,17 @@ main > p {
 
 /* 마우스를 올렸을 때 */
 .region-button:hover {
-  border-color: #607d8b;
-  color: #263238;
+  border-color: #176B68;
+  color: #105653;
   transform: translateY(-2px);
 }
 
 /* 선택된 지역 */
 .region-button.active {
-  background-color: #455a64;
-  border-color: #455a64;
+  background-color: #176B68;
+  border-color: #176B68;
   color: white;
-  box-shadow: 0 3px 8px rgba(38, 50, 56, 0.15);
+  box-shadow: 0 3px 8px rgba(23, 107, 104, 0.15);
 }
 
 /* 여행지 목록 간격 */

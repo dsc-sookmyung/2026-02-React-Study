@@ -17,6 +17,9 @@ function PlaceCard({ place }) {     //API에서 받아온 관광지 데이터 �
       <div className="place-info">
         <h3>{place.title}</h3>
         <p>{place.addr1}</p>
+        <div className="place-more">
+          자세히 살펴보기 <span>→</span>
+        </div>
       </div>
     </Link>
   );
