@@ -42,27 +42,42 @@ function PlaceDetail() {
     );
   }
 
-  return (
-    <main className="place-detail">
-      <Link to="/">← 목록으로 돌아가기</Link>
+  
 
-      <h1>{place.title}</h1>
+return (
+  <main className="place-detail">
+    <Link to="/" className="back-link">
+      ← 목록으로 돌아가기
+    </Link>
 
+    <h1 className="detail-title">{place.title}</h1>
+
+    {/* 이미지와 상세 정보를 하나의 박스로 묶기 */}
+    <div className="detail-card">
       {place.firstimage && (
-        <img src={place.firstimage} alt={place.title} />
+        <img
+          className="detail-image"
+          src={place.firstimage}
+          alt={place.title}
+        />
       )}
 
-      <p>주소: {place.addr1}</p>
-      {place.tel && <p>전화번호: {place.tel}</p>}
+      <section className="detail-info">
+        <h2>여행지 정보</h2>
+        <p>📍 주소: {place.addr1 || "주소 정보 없음"}</p>
 
-      {place.overview && (
-        <section>
-          <h2>여행지 소개</h2>
-          <p>{place.overview}</p>
-        </section>
-      )}
-    </main>
-  );
+        {place.tel && <p>☎ 전화번호: {place.tel}</p>}
+
+        {place.overview && (
+          <div className="detail-overview">
+            <h2>여행지 소개</h2>
+            <p>{place.overview}</p>
+          </div>
+        )}
+      </section>
+    </div>
+  </main>
+);
 }
 
 export default PlaceDetail;
