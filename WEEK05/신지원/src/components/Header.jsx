@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-        <h2>TRAVEL LOG</h2>
+        <h2>TOUR LOG</h2>
       </Link>
     </header>
   );
