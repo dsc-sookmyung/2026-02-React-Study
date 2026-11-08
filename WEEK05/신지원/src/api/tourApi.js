@@ -5,7 +5,7 @@ const BASE_URL =
   "https://apis.data.go.kr/B551011/KorService2/areaBasedList2";
 
 // 관광지 목록 조회
-export async function getTourList() {
+export async function getTourList(areaCode = "1") {     //기본적으로 서울(1) 조회
   try {
     const params = new URLSearchParams({
       serviceKey: API_KEY,
@@ -16,7 +16,7 @@ export async function getTourList() {
       pageNo: "1",
       arrange: "O",
       contentTypeId: "12",
-      areaCode: "1",
+      areaCode: areaCode,
     });
 
     const response = await fetch(`${BASE_URL}?${params}`);

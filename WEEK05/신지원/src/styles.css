@@ -179,3 +179,62 @@ main > p {
   color: #455a64;
   white-space: pre-line;
 }
+
+
+/* 지역 선택 영역 */
+.region-list {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 35px;
+}
+
+/* 지역 버튼 기본 디자인 */
+.region-button {
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #e0e7eb;
+  border-radius: 30px;
+  background-color: white;
+  color: #607d8b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 마우스를 올렸을 때 */
+.region-button:hover {
+  border-color: #607d8b;
+  color: #263238;
+  transform: translateY(-2px);
+}
+
+/* 선택된 지역 */
+.region-button.active {
+  background-color: #455a64;
+  border-color: #455a64;
+  color: white;
+  box-shadow: 0 3px 8px rgba(38, 50, 56, 0.15);
+}
+
+/* 여행지 목록 간격 */
+.place-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+/* 작은 화면 */
+@media (max-width: 600px) {
+  .region-list {
+    gap: 8px;
+  }
+
+  .region-button {
+    padding: 9px 15px;
+    font-size: 13px;
+  }
+}
