@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getPlaceById } from '../api/tourApi.js';
+import NotFound from './NotFound.jsx';
 
 function PlaceDetail() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function PlaceDetail() {
     getPlaceById(id).then((data) => setPlace(data));
   }, [id]);
 
-  if (!place) return <div className="container">여행지 정보를 확인해주세요.</div>;
+  if (!place) return <NotFound />;
 
   const overview = new DOMParser().parseFromString(place.overview || '', 'text/html').body.textContent;
 
