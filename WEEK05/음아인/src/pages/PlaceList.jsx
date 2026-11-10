@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getPlaces } from '../api/tourApi.js';
+import PlaceCard from '../components/PlaceCard.jsx';
 
 function PlaceList() {
   const [places, setPlaces] = useState([]);
@@ -12,7 +13,7 @@ function PlaceList() {
     <div className="container">
       <h1>국내 여행지 둘러보기</h1>
       <div className="place-list">
-        {places.map((place) => <p key={place.contentid}>{place.title}</p>)}
+        {places.map((place) => <PlaceCard key={place.contentid} place={place} />)}
       </div>
     </div>
   );
