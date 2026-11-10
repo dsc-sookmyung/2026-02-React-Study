@@ -1,0 +1,398 @@
+
+/* ==============================
+   1. 전체 기본 스타일
+============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fffaf7;
+  color: #302d2b;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+
+
+/* ==============================
+   2. 상단 헤더
+============================== */
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 140px;
+  margin-bottom: 20px;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* 사이트 이름 */
+.site-logo {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #302d2b;
+  text-decoration: none;
+}
+
+/* 사이트 설명 */
+.site-subtitle {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #a18b80;
+  letter-spacing: -0.3px;
+}
+
+
+/* ==============================
+   3. 지역 선택 영역
+============================== */
+
+.region-section {
+  margin-bottom: 42px;
+  padding: 20px 0 34px;
+  border-bottom: 1px solid #f0e5df;
+}
+
+/* 지역 선택 제목 */
+.region-section h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 버튼 9개씩 2줄 가운데 정렬 */
+.region-menu {
+  display: grid;
+  grid-template-columns: repeat(9, 88px);
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 기본 버튼 */
+.region-button {
+  width: 88px;
+  height: 38px;
+  padding: 0;
+
+  background-color: #fff4ed;
+  color: #80675a;
+  border: 1px solid #f0d8c8;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* 마우스를 올렸을 때 */
+.region-button:hover {
+  background-color: #ffe4d4;
+  border-color: #eebda4;
+  transform: translateY(-2px);
+}
+
+/* 선택된 지역 */
+.region-button.active {
+  background-color: #efb69c;
+  border-color: #efb69c;
+  color: #50382c;
+  font-weight: 700;
+}
+
+.region-button.active:hover {
+  background-color: #e9a788;
+}
+
+/* ==============================
+   4. 여행지 TOP 10 영역
+============================== */
+
+.places-section {
+  margin-top: 10px;
+}
+
+.places-section h1 {
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.places-section > p {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #8a817c;
+}
+
+/* 카드 목록 */
+.place-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px 20px;
+}
+
+/* 개별 카드 영역 */
+.place-item {
+  position: relative;
+  min-width: 0;
+}
+
+/* 여행지 카드 */
+.place-card {
+  display: block;
+  height: 100%;
+
+  background-color: #ffffff;
+  border: 1px solid #f1eae5;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 16px rgba(80, 50, 30, 0.04);
+
+  color: inherit;
+  text-decoration: none;
+
+  transition: transform 0.2s,
+              box-shadow 0.2s;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(80, 50, 30, 0.1);
+}
+
+/* TOP 순위 */
+.rank-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+
+  padding: 6px 12px;
+  background-color: #efae8e;
+  color: #4c2f21;
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+
+/* ==============================
+   5. 여행지 카드 이미지
+============================== */
+
+.place-image {
+  width: 100%;
+  height: 190px;
+  background-color: #f5efea;
+  overflow: hidden;
+}
+
+.place-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.place-card:hover .place-image img {
+  transform: scale(1.04);
+}
+
+/* 사진이 없는 경우 */
+.image-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #f5efea;
+  color: #a89e97;
+  font-size: 14px;
+}
+
+
+/* ==============================
+   6. 여행지 카드 텍스트
+============================== */
+
+.place-info {
+  padding: 18px;
+}
+
+.place-info h2 {
+  margin-bottom: 8px;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+
+  /* 제목 최대 2줄 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.place-info p {
+  margin: 0;
+
+  color: #8a817c;
+  font-size: 13px;
+  line-height: 1.6;
+
+  /* 주소 최대 2줄 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* ==============================
+   7. 여행지 상세 페이지
+============================== */
+
+.place-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+
+  background-color: #ffffff;
+  border: 1px solid #f1eae5;
+  border-radius: 20px;
+}
+
+.place-detail a {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #ce8564;
+}
+
+.place-detail a:hover {
+  text-decoration: underline;
+}
+
+.place-detail h1 {
+  margin-bottom: 26px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.place-detail img {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-bottom: 36px;
+
+  border-radius: 14px;
+}
+
+.place-detail h2 {
+  margin-top: 32px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  border-bottom: 1px solid #f1eae5;
+}
+
+.place-detail p {
+  margin-bottom: 24px;
+
+  color: #625c57;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+
+/* ==============================
+   8. 404 페이지
+============================== */
+
+.not-found {
+  max-width: 600px;
+  margin: 70px auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.not-found h1 {
+  margin-bottom: 12px;
+  font-size: 80px;
+  font-weight: 800;
+  color: #efae8e;
+}
+
+.not-found h2 {
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+
+.not-found p {
+  margin-bottom: 28px;
+  color: #8a817c;
+  font-size: 15px;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 12px 24px;
+
+  background-color: #efae8e;
+  border-radius: 30px;
+
+  color: #4c2f21;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.not-found a:hover {
+  background-color: #e79d79;
+}
+
