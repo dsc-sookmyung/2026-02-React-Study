@@ -1,0 +1,138 @@
+
+.place-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+.place-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.place-header h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.place-header p {
+  font-size: 16px;
+  color: #777;
+}
+
+.place-section h2 {
+  font-size: 23px;
+  color: #222;
+}
+
+.filter-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.region-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.region-filter label {
+  font-size: 15px;
+  color: #555;
+}
+
+.region-filter select {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.region-filter select:focus {
+  outline: none;
+  border-color: #6b9bd2;
+}
+
+.place-count {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.place-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
+}
+
+.place-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.place-info {
+  padding: 18px;
+}
+
+.place-info h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.place-info p {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.no-places {
+  color: #888;
+  padding: 30px 0;
+}
+
+@media (max-width: 850px) {
+  .place-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .place-page {
+    padding: 30px 18px;
+  }
+
+  .place-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-area {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
