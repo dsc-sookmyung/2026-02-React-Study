@@ -5,9 +5,24 @@ import PlaceCard from '../components/PlaceCard.jsx';
 function PlaceList() {
   const [areaCode, setAreaCode] = useState('1');
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    getPlaces(areaCode).then((data) => setPlaces(data));
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+
+    getPlaces(areaCode, controller.signal)
+      .then((data) => setPlaces(data))
+      .catch((err) => {
+        if (err.name !== 'AbortError') setError(err.message);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+
+    return () => controller.abort();
   }, [areaCode]);
 
   return (
@@ -24,9 +39,15 @@ function PlaceList() {
           </select>
         </label>
       </div>
-      <div className="place-list">
-        {places.map((place) => <PlaceCard key={place.contentid} place={place} />)}
-      </div>
+      {loading ? <p>여행지를 불러오는 중입니다...</p> : error ? (
+        <p role="alert">{error}</p>
+      ) : places.length === 0 ? (
+        <p>등록된 여행지가 없습니다.</p>
+      ) : (
+        <div className="place-list">
+          {places.map((place) => <PlaceCard key={place.contentid} place={place} />)}
+        </div>
+      )}
     </div>
   );
 }

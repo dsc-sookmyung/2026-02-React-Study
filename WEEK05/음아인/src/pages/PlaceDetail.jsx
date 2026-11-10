@@ -6,11 +6,29 @@ import NotFound from './NotFound.jsx';
 function PlaceDetail() {
   const { id } = useParams();
   const [place, setPlace] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    getPlaceById(id).then((data) => setPlace(data));
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    setPlace(null);
+
+    getPlaceById(id, controller.signal)
+      .then((data) => setPlace(data))
+      .catch((err) => {
+        if (err.name !== 'AbortError') setError(err.message);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+
+    return () => controller.abort();
   }, [id]);
 
+  if (loading) return <div className="container">상세 정보를 불러오는 중입니다...</div>;
+  if (error) return <div className="container"><p role="alert">{error}</p><Link to="/">목록으로 돌아가기</Link></div>;
   if (!place) return <NotFound />;
 
   const overview = new DOMParser().parseFromString(place.overview || '', 'text/html').body.textContent;
