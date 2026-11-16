@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "React 공부하기",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "과제 제출하기",
+      "completed": true
+    },
+    {
+      "title": "과제하기",
+      "completed": false,
+      "id": "i3nQXhQ8m1s"
+    },
+    {
+      "title": "샤워하기",
+      "completed": false,
+      "id": "zR7liyCoAoQ"
+    },
+    {
+      "title": "채점하기",
+      "completed": false,
+      "id": "hBm_RJkhjj4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
