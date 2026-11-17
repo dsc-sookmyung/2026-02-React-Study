@@ -1,6 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import './App.css';
+import TodoItem from './components/TodoItem';
 
 const API_URL = 'http://localhost:3001/todos';
 
@@ -175,29 +175,12 @@ function App() {
         {!loading && !error && todos.length > 0 && (
           <ul className="todo-list">
             {todos.map((todo) => (
-              <li className="todo-item" key={todo.id}>
-                <span
-                  className={todo.completed ? 'completed' : ''}
-                >
-                  {todo.title}
-                </span>
-
-                <div className="todo-actions">
-                  <span
-                    className="todo-status"
-                    onClick={() => toggleTodo(todo.id, todo.completed)}
-                  >
-                    {todo.completed ? '완료' : '진행 중'}
-                  </span>
-
-                  <button
-                    className="delete-button"
-                    onClick={() => deleteTodo(todo.id)}
-                  >
-                    삭제
-                  </button>
-                </div>
-              </li>
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+              />
             ))}
           </ul>
         )}
