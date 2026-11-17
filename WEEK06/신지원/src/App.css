@@ -1,0 +1,132 @@
+
+.todo-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  box-sizing: border-box;
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.subtitle {
+  color: #8b78c8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.todo-header h1 {
+  font-size: 42px;
+  margin: 0 0 12px;
+  color: #332d45;
+  font-weight: 700;
+}
+
+.description {
+  color: #9992a8;
+  font-size: 14px;
+}
+
+.todo-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(70, 55, 100, 0.07);
+}
+
+.todo-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.todo-summary h2 {
+  font-size: 19px;
+  margin: 0;
+  color: #39334a;
+  font-weight: 700;
+}
+
+.todo-summary span {
+  font-size: 13px;
+  color: #8b78c8;
+  background: #f2effa;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 4px;
+  border-bottom: 1px solid #f0eef4;
+  font-size: 15px;
+  color: #514b60;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #b6b1c0;
+}
+
+.todo-status {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #8b78c8;
+  background: #f5f2fc;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.status-message {
+  text-align: center;
+  padding: 40px 10px;
+  color: #9992a8;
+  font-size: 14px;
+}
+
+.status-message.error {
+  color: #d46c75;
+}
+
+.status-message button {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #8b78c8;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .todo-container {
+    padding: 45px 18px;
+  }
+
+  .todo-header h1 {
+    font-size: 34px;
+  }
+
+  .todo-card {
+    padding: 22px 18px;
+  }
+}
