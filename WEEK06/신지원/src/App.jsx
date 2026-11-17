@@ -8,8 +8,10 @@ function App() {
   const [todos, setTodos] = useState([]);             // 서버에서 가져온 할 일 목록
   const [loading, setLoading] = useState(true);       // 데이터 요청 상태
   const [error, setError] = useState('');
+  const [newTodo, setNewTodo] = useState('');         //입력창에 작성하는 할 일의 내용을 저장
 
-  const fetchTodos = async () => {                    // 서버에서 할 일 목록 조회
+  // 서버에서 할 일 목록 조회
+  const fetchTodos = async () => {
     try {
       setLoading(true);
       setError('');
@@ -26,6 +28,38 @@ function App() {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // 새로운 할 일 추가
+  const addTodo = async () => {
+    if (!newTodo.trim()) {
+      alert('할 일을 입력해 주세요!');
+      return;
+    }
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',                               //서버에 새로운 데이터 등록
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: newTodo,
+          completed: false,                           //새 할 일은 미완료 상태로 등록
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('할 일을 추가하지 못했습니다.');
+      }
+
+      const data = await response.json();
+
+      setTodos((prev) => [...prev, data]);             //기존 목록 뒤에 새 데이터 추가
+      setNewTodo('');
+    } catch (err) {
+      setError(err.message);
     }
   };
 
@@ -50,6 +84,19 @@ function App() {
           <span>
             전체 {todos.length}개
           </span>
+        </div>
+
+        {/* 할 일 입력 영역 */}
+        <div className="todo-form">
+          <input
+            type="text"
+            placeholder="새로운 할 일을 입력하세요"
+            value={newTodo}                                   //입력창에 현재 state 값을 표시
+            onChange={(e) => setNewTodo(e.target.value)}      //사용자가 입력할 때마다 newTodo를 갱신
+          />
+          <button onClick={addTodo}>                         
+            추가
+          </button>
         </div>
 
         {/* Loading 상태 */}
