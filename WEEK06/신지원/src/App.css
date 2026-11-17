@@ -280,3 +280,14 @@
 .todo-actions .edit-cancel-button:hover {
   background: #e6e0e0;
 }
+
+.success-message {
+  margin: 12px 0;
+  padding: 12px;
+  text-align: center;
+  color: #27845b;
+  background-color: #eaf7ef;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}

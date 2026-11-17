@@ -9,6 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);       // 데이터 요청 상태
   const [error, setError] = useState('');
   const [newTodo, setNewTodo] = useState('');         //입력창에 작성하는 할 일의 내용을 저장
+  const [message, setMessage] = useState('');         //성공 피드백 UI
 
   // 서버에서 할 일 목록 조회
   const fetchTodos = async () => {
@@ -58,6 +59,7 @@ function App() {
 
       setTodos((prev) => [...prev, data]);             //기존 목록 뒤에 새 데이터 추가
       setNewTodo('');
+      setMessage('할 일이 추가되었습니다!');
     } catch (err) {
       setError(err.message);
     }
@@ -116,6 +118,7 @@ function App() {
           todo.id === id ? data : todo
         )
       );
+      setMessage('할 일이 수정되었습니다!');
     } catch (err) {
       setError(err.message);
     }
@@ -131,10 +134,10 @@ function App() {
       if (!response.ok) {
         throw new Error('할 일을 삭제하지 못했습니다.');
       }
-
       setTodos((prev) =>                                   //변경된 목록을 React State에 반영
         prev.filter((todo) => todo.id !== id)              //삭제할 항목을 제외한 새로운 배열 생성
       );
+      setMessage('할 일이 삭제되었습니다!');
     } catch (err) {
       setError(err.message);
     }
@@ -144,6 +147,17 @@ function App() {
   useEffect(() => {
     fetchTodos();
   }, []);
+
+  // 성공 메시지를 2.5초 후 자동으로 제거
+  useEffect(() => {
+    if (!message) return;
+
+    const timer = setTimeout(() => {
+      setMessage('');
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, [message]);
 
   return (
     <div className="todo-container">
@@ -162,6 +176,11 @@ function App() {
             전체 {todos.length}개
           </span>
         </div>
+
+        {/* 성공 메시지 */}
+        {message && (
+          <p className="success-message">{message}</p>
+        )}
 
         {/* 할 일 입력 영역 */}
         <div className="todo-form">
