@@ -1,4 +1,5 @@
 
+/* 전체 레이아웃 */
 .todo-container {
   width: 100%;
   max-width: 650px;
@@ -13,7 +14,7 @@
 }
 
 .subtitle {
-  color: #8b78c8;
+  color: #647d9b;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -23,12 +24,12 @@
 .todo-header h1 {
   font-size: 42px;
   margin: 0 0 12px;
-  color: #332d45;
+  color: #293d56;
   font-weight: 700;
 }
 
 .description {
-  color: #9992a8;
+  color: #8795a7;
   font-size: 14px;
 }
 
@@ -36,7 +37,7 @@
   background: #fff;
   border-radius: 18px;
   padding: 28px;
-  box-shadow: 0 8px 30px rgba(70, 55, 100, 0.07);
+  box-shadow: 0 8px 30px rgba(41, 61, 86, 0.08);
 }
 
 .todo-summary {
@@ -49,14 +50,14 @@
 .todo-summary h2 {
   font-size: 19px;
   margin: 0;
-  color: #39334a;
+  color: #344a64;
   font-weight: 700;
 }
 
 .todo-summary span {
   font-size: 13px;
-  color: #8b78c8;
-  background: #f2effa;
+  color: #536d8b;
+  background: #edf2f7;
   padding: 6px 12px;
   border-radius: 20px;
 }
@@ -73,9 +74,9 @@
   align-items: center;
   gap: 12px;
   padding: 17px 4px;
-  border-bottom: 1px solid #f0eef4;
+  border-bottom: 1px solid #edf0f4;
   font-size: 15px;
-  color: #514b60;
+  color: #4d5d70;
 }
 
 .todo-item:last-child {
@@ -84,14 +85,14 @@
 
 .completed {
   text-decoration: line-through;
-  color: #b6b1c0;
+  color: #aeb8c4;
 }
 
 .todo-status {
   flex-shrink: 0;
   font-size: 12px;
-  color: #8b78c8;
-  background: #f5f2fc;
+  color: #536d8b;
+  background: #edf2f7;
   padding: 5px 10px;
   border-radius: 12px;
   cursor: pointer;
@@ -100,12 +101,12 @@
 .status-message {
   text-align: center;
   padding: 40px 10px;
-  color: #9992a8;
+  color: #8795a7;
   font-size: 14px;
 }
 
 .status-message.error {
-  color: #d46c75;
+  color: #c8757d;
 }
 
 .status-message button {
@@ -113,7 +114,7 @@
   padding: 9px 16px;
   border: none;
   border-radius: 8px;
-  background: #8b78c8;
+  background: #536d8b;
   color: white;
   cursor: pointer;
 }
@@ -132,6 +133,7 @@
   }
 }
 
+/* 할 일 추가 영역 */
 .todo-form {
   display: flex;
   gap: 10px;
@@ -142,30 +144,32 @@
   flex: 1;
   min-width: 0;
   padding: 12px 14px;
-  border: 1px solid #e5e1eb;
+  border: 1px solid #dce3eb;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
 }
 
 .todo-form input:focus {
-  border-color: #a99acb;
+  border-color: #7d94af;
 }
 
 .todo-form button {
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  background-color: #a99acb;
+  background-color: #536d8b;
   color: white;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .todo-form button:hover {
-  background-color: #9281b9;
+  background-color: #405875;
 }
 
+/* 할 일 관리 버튼 */
 .todo-actions {
   display: flex;
   align-items: center;
@@ -176,32 +180,31 @@
   padding: 6px 10px;
   border: none;
   border-radius: 6px;
-  background-color: #f5e9e9;
-  color: #b56b6b;
+  background-color: #f5eaea;
+  color: #b56e76;
   font-size: 12px;
   cursor: pointer;
 }
 
 .delete-button:hover {
-  background-color: #eddada;
+  background-color: #eddcde;
 }
-
 
 /* 할 일 제목 수정 입력창 */
 .todo-item input {
   flex: 1;
   min-width: 0;
   padding: 8px 10px;
-  border: 1px solid #c9bddf;
+  border: 1px solid #c5d1df;
   border-radius: 7px;
   font-size: 14px;
-  color: #514866;
+  color: #4d5d70;
   outline: none;
 }
 
 .todo-item input:focus {
-  border-color: #a99acb;
-  box-shadow: 0 0 0 2px rgba(169, 154, 203, 0.15);
+  border-color: #7d94af;
+  box-shadow: 0 0 0 2px rgba(100, 125, 155, 0.15);
 }
 
 /* 수정 관련 버튼 공통 */
@@ -220,73 +223,41 @@
 
 /* 수정 버튼 */
 .edit-button {
-  background-color: #eeeaf5;
-  color: #81729f;
+  background-color: #e9eef4;
+  color: #536d8b;
 }
 
 .edit-button:hover {
-  background-color: #e2dced;
+  background-color: #dce5ef;
 }
 
 /* 저장 버튼 */
 .edit-save-button {
-  background-color: #a99acb;
+  background-color: #536d8b;
   color: white;
 }
 
 .edit-save-button:hover {
-  background-color: #9281b9;
+  background-color: #405875;
 }
 
 /* 취소 버튼 */
 .edit-cancel-button {
-  background-color: #f1eeee;
-  color: #817878;
+  background-color: #eef0f3;
+  color: #778493;
 }
 
 .edit-cancel-button:hover {
-  background-color: #e6e0e0;
+  background-color: #e0e4e9;
 }
 
-/* 수정 모드 버튼 스타일 강제 적용 */
-.todo-actions .edit-save-button {
-  appearance: none;
-  border: none;
-  padding: 7px 12px;
-  border-radius: 6px;
-  background: #a99acb;
-  color: white;
-  font-family: inherit;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.todo-actions .edit-save-button:hover {
-  background: #9281b9;
-}
-
-.todo-actions .edit-cancel-button {
-  appearance: none;
-  border: none;
-  padding: 7px 12px;
-  border-radius: 6px;
-  background: #f1eeee;
-  color: #817878;
-  font-family: inherit;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.todo-actions .edit-cancel-button:hover {
-  background: #e6e0e0;
-}
-
+/* 성공 피드백 메시지 */
 .success-message {
   margin: 12px 0;
   padding: 12px;
   text-align: center;
-  color: #27845b;
-  background-color: #eaf7ef;
+  color: #405875;
+  background-color: #eaf0f6;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
