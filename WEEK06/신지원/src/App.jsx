@@ -40,7 +40,7 @@ function App() {
 
     try {
       const response = await fetch(API_URL, {
-        method: 'POST',                               //서버에 새로운 데이터 등록
+        method: 'POST',                               //[POST] 서버에 새로운 데이터 등록
         headers: {
           'Content-Type': 'application/json',
         },
@@ -58,6 +58,54 @@ function App() {
 
       setTodos((prev) => [...prev, data]);             //기존 목록 뒤에 새 데이터 추가
       setNewTodo('');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  // 할 일 완료 상태 수정
+  const toggleTodo = async (id, completed) => {
+    try {
+      const response = await fetch(`${API_URL}/${id}`, {
+        method: 'PATCH',                                //[PATCH] 기존 데이터 중 필요한 속성만 수정
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          completed: !completed,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('할 일 상태를 수정하지 못했습니다.');
+      }
+
+      const data = await response.json();
+
+      setTodos((prev) =>  
+        prev.map((todo) =>                               //기존 목록에서 수정한 할 일만 새로운 데이터로 교체
+          todo.id === id ? data : todo
+        )
+      );
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  // 할 일 삭제
+  const deleteTodo = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/${id}`, {   //삭제할 할 일의 고유 주소
+        method: 'DELETE',                                  //[DELETE] 서버에 특정 데이터 삭제 요청
+      });
+
+      if (!response.ok) {
+        throw new Error('할 일을 삭제하지 못했습니다.');
+      }
+
+      setTodos((prev) =>                                   //변경된 목록을 React State에 반영
+        prev.filter((todo) => todo.id !== id)              //삭제할 항목을 제외한 새로운 배열 생성
+      );
     } catch (err) {
       setError(err.message);
     }
@@ -94,7 +142,7 @@ function App() {
             value={newTodo}                                   //입력창에 현재 state 값을 표시
             onChange={(e) => setNewTodo(e.target.value)}      //사용자가 입력할 때마다 newTodo를 갱신
           />
-          <button onClick={addTodo}>                         
+          <button onClick={addTodo}> 
             추가
           </button>
         </div>
@@ -133,9 +181,22 @@ function App() {
                 >
                   {todo.title}
                 </span>
-                <span className="todo-status">
-                  {todo.completed ? '완료' : '진행 중'}
-                </span>
+
+                <div className="todo-actions">
+                  <span
+                    className="todo-status"
+                    onClick={() => toggleTodo(todo.id, todo.completed)}
+                  >
+                    {todo.completed ? '완료' : '진행 중'}
+                  </span>
+
+                  <button
+                    className="delete-button"
+                    onClick={() => deleteTodo(todo.id)}
+                  >
+                    삭제
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

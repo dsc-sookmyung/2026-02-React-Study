@@ -94,6 +94,7 @@
   background: #f5f2fc;
   padding: 5px 10px;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .status-message {
@@ -163,4 +164,24 @@
 
 .todo-form button:hover {
   background-color: #9281b9;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.delete-button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f5e9e9;
+  color: #b56b6b;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #eddada;
 }
