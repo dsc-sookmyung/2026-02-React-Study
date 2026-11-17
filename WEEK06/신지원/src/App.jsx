@@ -92,6 +92,35 @@ function App() {
     }
   };
 
+  // 할 일 제목 수정
+  const editTodo = async (id, title) => {
+    try {
+      const response = await fetch(`${API_URL}/${id}`, {
+        method: 'PATCH',                                 //[PATCH] 기존 데이터 일부 수정
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: title.trim(),                           //앞뒤 공백을 제거한 제목 전송
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('할 일 제목을 수정하지 못했습니다.');
+      }
+
+      const data = await response.json();
+
+      setTodos((prev) =>
+        prev.map((todo) =>                               //수정한 할 일만 새로운 데이터로 교체
+          todo.id === id ? data : todo
+        )
+      );
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   // 할 일 삭제
   const deleteTodo = async (id) => {
     try {
@@ -180,6 +209,7 @@ function App() {
                 todo={todo}
                 toggleTodo={toggleTodo}
                 deleteTodo={deleteTodo}
+                editTodo={editTodo}
               />
             ))}
           </ul>

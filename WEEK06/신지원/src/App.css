@@ -185,3 +185,98 @@
 .delete-button:hover {
   background-color: #eddada;
 }
+
+
+/* 할 일 제목 수정 입력창 */
+.todo-item input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #c9bddf;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #514866;
+  outline: none;
+}
+
+.todo-item input:focus {
+  border-color: #a99acb;
+  box-shadow: 0 0 0 2px rgba(169, 154, 203, 0.15);
+}
+
+/* 수정 관련 버튼 공통 */
+.edit-button,
+.edit-save-button,
+.edit-cancel-button {
+  appearance: none;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 수정 버튼 */
+.edit-button {
+  background-color: #eeeaf5;
+  color: #81729f;
+}
+
+.edit-button:hover {
+  background-color: #e2dced;
+}
+
+/* 저장 버튼 */
+.edit-save-button {
+  background-color: #a99acb;
+  color: white;
+}
+
+.edit-save-button:hover {
+  background-color: #9281b9;
+}
+
+/* 취소 버튼 */
+.edit-cancel-button {
+  background-color: #f1eeee;
+  color: #817878;
+}
+
+.edit-cancel-button:hover {
+  background-color: #e6e0e0;
+}
+
+/* 수정 모드 버튼 스타일 강제 적용 */
+.todo-actions .edit-save-button {
+  appearance: none;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  background: #a99acb;
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.todo-actions .edit-save-button:hover {
+  background: #9281b9;
+}
+
+.todo-actions .edit-cancel-button {
+  appearance: none;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  background: #f1eeee;
+  color: #817878;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.todo-actions .edit-cancel-button:hover {
+  background: #e6e0e0;
+}
