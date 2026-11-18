@@ -1,0 +1,204 @@
+
+/* 전체 화면 */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 20px;
+  background-color: #f5f7fb;
+}
+
+/* 메인 컨테이너 */
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+/* 제목 */
+h1 {
+  margin: 10;
+  font-size: 30px;
+  font-weight: 700;
+  color: #242b35;
+  text-align: center;
+}
+
+/* 할 일 입력 */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.todo-input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #d9dde5;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #242b35;
+  font-size: 14px;
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: #0047ab;
+}
+
+.todo-input::placeholder {
+  color: #a0a6b0;
+}
+
+/* 추가 버튼 */
+.add-button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0047ab;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #003887;
+}
+
+.add-button:disabled {
+  background-color: #aabbd6;
+  cursor: not-allowed;
+}
+
+/* 할 일 목록 */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 개별 할 일 */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.todo-item:first-child {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* 체크박스 */
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #0047ab;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* 할 일 텍스트 */
+.todo-text {
+  flex: 1;
+  color: #242b35;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.completed {
+  color: #a0a6b0;
+  text-decoration: line-through;
+}
+
+/* 수정 및 삭제 버튼 */
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-actions button,
+.todo-edit-form button {
+  padding: 7px 12px;
+  border: 1px solid #d9dde5;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #0047ab;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.todo-actions button:last-child {
+  color: #777f8e;
+}
+
+/* 수정 입력창 */
+.todo-edit-form {
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+}
+
+.todo-edit-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1px solid #d9dde5;
+  border-radius: 5px;
+  outline: none;
+  color: #242b35;
+}
+
+.todo-edit-form input:focus {
+  border-color: #0047ab;
+}
+
+/* 버튼 비활성화 */
+.todo-actions button:disabled,
+.todo-edit-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 성공 메시지 */
+.success-message {
+  padding: 12px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  background-color: #edf4ff;
+  color: #0047ab;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 오류 메시지 */
+.error-message {
+  padding: 12px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  background-color: #fff1f1;
+  color: #cf4545;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 로딩 및 빈 목록 */
+.state-message {
+  padding: 28px 0;
+  color: #999fa9;
+  font-size: 14px;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fb;
+  color: #242b35;
+  font-family: Arial, 'Malgun Gothic', sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
