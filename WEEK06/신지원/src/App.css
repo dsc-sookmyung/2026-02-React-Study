@@ -1,0 +1,264 @@
+
+/* 전체 레이아웃 */
+.todo-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  box-sizing: border-box;
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.subtitle {
+  color: #647d9b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.todo-header h1 {
+  font-size: 42px;
+  margin: 0 0 12px;
+  color: #293d56;
+  font-weight: 700;
+}
+
+.description {
+  color: #8795a7;
+  font-size: 14px;
+}
+
+.todo-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(41, 61, 86, 0.08);
+}
+
+.todo-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.todo-summary h2 {
+  font-size: 19px;
+  margin: 0;
+  color: #344a64;
+  font-weight: 700;
+}
+
+.todo-summary span {
+  font-size: 13px;
+  color: #536d8b;
+  background: #edf2f7;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 4px;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 15px;
+  color: #4d5d70;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #aeb8c4;
+}
+
+.todo-status {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #536d8b;
+  background: #edf2f7;
+  padding: 5px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.status-message {
+  text-align: center;
+  padding: 40px 10px;
+  color: #8795a7;
+  font-size: 14px;
+}
+
+.status-message.error {
+  color: #c8757d;
+}
+
+.status-message button {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #536d8b;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .todo-container {
+    padding: 45px 18px;
+  }
+
+  .todo-header h1 {
+    font-size: 34px;
+  }
+
+  .todo-card {
+    padding: 22px 18px;
+  }
+}
+
+/* 할 일 추가 영역 */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.todo-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #dce3eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.todo-form input:focus {
+  border-color: #7d94af;
+}
+
+.todo-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #536d8b;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.todo-form button:hover {
+  background-color: #405875;
+}
+
+/* 할 일 관리 버튼 */
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.delete-button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f5eaea;
+  color: #b56e76;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #eddcde;
+}
+
+/* 할 일 제목 수정 입력창 */
+.todo-item input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #c5d1df;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #4d5d70;
+  outline: none;
+}
+
+.todo-item input:focus {
+  border-color: #7d94af;
+  box-shadow: 0 0 0 2px rgba(100, 125, 155, 0.15);
+}
+
+/* 수정 관련 버튼 공통 */
+.edit-button,
+.edit-save-button,
+.edit-cancel-button {
+  appearance: none;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 수정 버튼 */
+.edit-button {
+  background-color: #e9eef4;
+  color: #536d8b;
+}
+
+.edit-button:hover {
+  background-color: #dce5ef;
+}
+
+/* 저장 버튼 */
+.edit-save-button {
+  background-color: #536d8b;
+  color: white;
+}
+
+.edit-save-button:hover {
+  background-color: #405875;
+}
+
+/* 취소 버튼 */
+.edit-cancel-button {
+  background-color: #eef0f3;
+  color: #778493;
+}
+
+.edit-cancel-button:hover {
+  background-color: #e0e4e9;
+}
+
+/* 성공 피드백 메시지 */
+.success-message {
+  margin: 12px 0;
+  padding: 12px;
+  text-align: center;
+  color: #405875;
+  background-color: #eaf0f6;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
